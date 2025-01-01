@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import { trpc } from "@/trpc/react";
+import { trpc } from "@/src/trpc/react";
 
 export default function Index() {
   const { data } = trpc.api.hello.useQuery({ text: "World" });
