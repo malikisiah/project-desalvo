@@ -1,5 +1,13 @@
 import { Stack } from "expo-router";
+import { TRPCReactProvider } from "@/trpc/react";
+import React from "react";
 
 export default function RootLayout() {
-  return <Stack />;
+  return (
+    <>
+      <TRPCReactProvider>
+        <Stack />
+      </TRPCReactProvider>
+    </>
+  );
 }

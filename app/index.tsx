@@ -1,6 +1,9 @@
 import { Text, View } from "react-native";
+import { trpc } from "@/trpc/react";
 
 export default function Index() {
+  const { data } = trpc.api.hello.useQuery({ text: "World" });
+  console.log(data);
   return (
     <View
       style={{
@@ -9,7 +12,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <Text> Hello {data}</Text>
     </View>
   );
 }
